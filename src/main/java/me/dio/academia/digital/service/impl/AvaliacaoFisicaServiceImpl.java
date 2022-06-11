@@ -1,5 +1,6 @@
 package me.dio.academia.digital.service.impl;
 
+import me.dio.academia.digital.entity.Aluno;
 import me.dio.academia.digital.entity.AvaliacaoFisica;
 import me.dio.academia.digital.entity.form.AvaliacaoFisicaForm;
 import me.dio.academia.digital.entity.form.AvaliacaoFisicaUpdateForm;
@@ -25,7 +26,7 @@ public class AvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService {
 
         AvaliacaoFisica avaliacaoFisica = new AvaliacaoFisica();
 
-        alunoRepository.findById(form.getAlunoId()).get();
+        Aluno aluno = alunoRepository.findById(form.getAlunoId()).get();
 
         avaliacaoFisica.setAluno(aluno);
         avaliacaoFisica.setPeso(form.getPeso());
